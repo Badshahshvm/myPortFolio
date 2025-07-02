@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<!--
+	Stellar by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+  <head>
+    <title>Stellar by HTML5 UP</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript>
+      <link rel="stylesheet" href="assets/css/noscript.css" />
+    </noscript>
+    <style>
+      .logo img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+        transition: transform 0.3s;
+        margin-bottom: 15px;
+      }
+      .logo img:hover {
+        transform: scale(1.1);
+      }
+      #header.alt {
+       
+        color: #ffffff;
+        padding: 3em 1em;
+        text-align: center;
+        animation: fadeInSlide 1.2s ease-out;
+      }
+      #header h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #4fd1c5;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+        animation: pulse 2s infinite;
+      }
+      #header p {
+        font-size: 1.1rem;
+        margin-top: 1rem;
+        line-height: 1.6;
+        color: #e0f7fa;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      #header .resume-button {
+        margin-top: 2rem;
+      }
+      #header .resume-button a {
+        display: inline-block;
+        padding: 0.75em 1.5em;
+        background-color: #4fd1c5;
+        color: #fff;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+      #header .resume-button a:hover {
+        background-color: #3baea0;
+        transform: translateY(-3px);
+      }
+      @keyframes fadeInSlide {
+        0% {
+          opacity: 0;
+          transform: translateY(-40px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes pulse {
+        0%, 100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+      }
+      .education-grid,
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        padding-top: 2rem;
+      }
+      .edu-card {
+        background: white;
+        border-radius: 10px;
+        padding: 1.5rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        text-align: left;
+      }
+      .edu-card h3 {
+        margin: 0;
+        font-size: 1.25rem;
+        color: #4fd1c5;
+      }
+      .edu-card p {
+        margin: 0.5rem 0 0;
+        font-size: 0.95rem;
+        color: #0f0e0e;
+      }
+      .skill-card {
+        background: white;
+        border-radius: 10px;
+        padding: 1.5rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        transition: transform 0.3s ease-in-out;
+      }
+      .skill-card:hover {
+        transform: scale(1.05);
+      }
+      .skill-card img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin-bottom: 10px;
+        object-fit: cover;
+        transition: transform 0.3s ease-in-out;
+      }
+      .skill-card:hover img {
+        transform: scale(1.1) rotate(5deg);
+      }
+      .skill-card h3 {
+        margin: 0;
+        color: #4fd1c5;
+      }
+
+      .skill-card:hover img,
+      .project-card:hover img {
+        transform: scale(1.1) rotate(5deg);
+      }
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        padding-top: 1rem;
+      }
+
+      .project-card {
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        background: white;
+        border-radius: 15px;
+        padding: 1rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+        color: #e0e0e0;
+
+        overflow: hidden;
+      }
+
+      .project-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 15px 40px rgba(24, 24, 24, 0.5);
+      }
+
+      .project-card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-bottom: 1rem;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .project-card:hover img {
+        transform: scale(1.05);
+      }
+
+      .project-content h3 {
+        color: #4fd1c5;
+        margin-bottom: 0.5rem;
+        font-size: 1.25rem;
+        font-weight: bold;
+      }
+
+      .project-content p {
+        color: #121212;
+        font-size: 0.95rem;
+        line-height: 1.4;
+      }
+      .experience-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+        animation: fadeUp 1s ease-in-out;
+      }
+
+      .experience-card {
+        background: linear-gradient(135deg, #1c1c2b, #2b2c3c);
+        border-left: 5px solid #4fd1c5;
+        border-radius: 15px;
+        padding: 1.5rem;
+        color: #e0e0e0;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .experience-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 25px rgba(79, 209, 197, 0.5);
+      }
+
+      .experience-card h3 {
+        color: #4fd1c5;
+        margin-bottom: 0.5rem;
+      }
+
+      .experience-card p {
+        margin: 0.3rem 0;
+        font-size: 0.95rem;
+      }
+
+      /* Animation Keyframes */
+      @keyframes fadeUp {
+        from {
+          transform: translateY(40px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body class="is-preload">
+    <div id="wrapper">
+      <header id="header" class="alt">
+        <span class="logo"><img src="images/mypic.jfif" alt="Shivam Raj" /></span>
+        <h1>SHIVAM KAUMR</h1>
+        <p>
+          A passionate Full-Stack Developer with expertise in the MERN Stack and
+          React Native, a Cybersecurity Enthusiast, and a strong problem-solver
+          who enjoys building efficient, scalable, and secure web and mobile
+          applications.
+        </p>
+        <div class="resume-button">
+          <a href="./MyResume2.pdf" download>Download Resume</a>
+        </div>
+      </header>
+      <div id="main">
+              <!-- Education Section -->
+              <section id="intro" class="main">
+                <header class="major">
+                  <h2>Education</h2>
+                </header>
+                <div class="education-grid">
+                  <div class="edu-card">
+                    <h3>B.Tech in Information Technology</h3>
+                    <p>Muzaffarpur Institute of Technology, Muzaffarpur</p>
+                    <p>2021 - 2025 | CGPA: 8.5</p>
+                  </div>
+                  <div class="edu-card">
+                    <h3>Intermediate (XII)</h3>
+                    <p>XYZ Intermediate School</p>
+                    <p>2019 - 2021 | Percentage: 84%</p>
+                  </div>
+                  <div class="edu-card">
+                    <h3>Matriculation (X)</h3>
+                    <p>ABC High School</p>
+                    <p>2018 - 2019 | Percentage: 89%</p>
+                  </div>
+                </div>
+              </section>
+      
+              <!-- Skills Section -->
+              <section id="skills" class="main">
+                <header class="major">
+                  <h2>Skills</h2>
+                </header>
+                <div class="skills-grid">
+                  <div class="skill-card">
+                    <img src="images/reactjs.png" alt="React" />
+                    <h3>React.js</h3>
+                  </div>
+                  <div class="skill-card">
+                    <img src="images/expressjs.png" alt="Express.js" />
+                    <h3>Express</h3>
+                  </div>
+                  <div class="skill-card">
+                    <img src="images/download.png" alt="MongoDB" />
+                    <h3>Html</h3>
+                  </div>
+                  <div class="skill-card">
+                    <img src="images/download (1).png" alt="css" />
+                    <h3>Css</h3>
+                  </div>
+                  <div class="skill-card">
+                    <img src="images/java.png" alt="Java" />
+                    <h3>Java</h3>
+                  </div>
+                  <div class="skill-card">
+                    <img src="images/github.jfif" alt="git" />
+                    <h3>Github</h3>
+                  </div>
+                  <div class="skill-card">
+                    <img src="images/python.jfif" alt="python" />
+                    <h3>python</h3>
+                  </div>
+                  <div class="skill-card">
+                    <img src="images/sql.png" alt="sql" />
+                    <h3>Sql</h3>
+                  </div>
+                  <div class="skill-card">
+                    <img src="images/c++.png" alt="C++" />
+                    <h3>C++</h3>
+                  </div>
+                </div>
+              </section>
+              <!-- Experience Section -->
+              <section id="experience" class="main">
+                <header class="major">
+                  <h2>Experience</h2>
+                </header>
+                <div class="experience-grid">
+                  <div class="experience-card">
+                    <h3>Software Developer Intern</h3>
+                    <p><strong>Company:</strong> Bluestck Fintech</p>
+                    <p><strong>Duration:</strong> Jan 2025 – Feb 2025</p>
+                  </div>
+                  <div class="experience-card">
+                    <h3>Backend Developer</h3>
+                    <p><strong>Company:</strong> Near</p>
+                    <p><strong>Duration:</strong> Feb 2025 – May 2025</p>
+                  </div>
+                  <div class="experience-card">
+                    <h3>Graduate Engineer Trainee</h3>
+                    <p><strong>Company:</strong> Mantra Softech</p>
+                    <p><strong>Duration:</strong> June 2025 – Present</p>
+                  </div>
+                </div>
+              </section>
+      
+              <section id="projects" class="main">
+                <header class="major">
+                  <h2>Projects</h2>
+                </header>
+                <div class="projects-grid">
+                  <a
+                    href="https://bite-buzz-tan.vercel.app/"
+                    target="_blank"
+                    class="project-card"
+                  >
+                    <img src="images/food.png" alt="Freelance Finder App" />
+                    <div class="project-content">
+                      <h3>Food Delivery App</h3>
+                      <p>
+                        MERN food delivery and listing application for small
+                        businesses.
+                      </p>
+                    </div>
+                  </a>
+                  <a
+                    href="https://tea-with-code.vercel.app/"
+                    target="_blank"
+                    class="project-card"
+                  >
+                    <img src="images/lms (2).png" alt="LMS System" />
+                    <div class="project-content">
+                      <h3>Learning Management System</h3>
+                      <p>
+                        Full-featured LMS using MERN stack, Stripe integration, admin
+                        panel, and student progress tracking.
+                      </p>
+                    </div>
+                  </a>
+                  <a
+                    href="https://guestian.onrender.com/"
+                    target="_blank"
+                    class="project-card"
+                  >
+                    <img src="images/ride.png" alt="Ride Booking App" />
+                    <div class="project-content">
+                      <h3>Ride Booking Platform</h3>
+                      <p>
+                        React + GSAP-based animated ride booking system with smooth UI
+                        transitions and trip management.
+                      </p>
+                    </div>
+                  </a>
+                </div>
+              </section>
+            </div>
+      
+            <footer id="footer">
+              <section>
+                <h2>Get in Touch</h2>
+                <p>
+                  If you’d like to collaborate or have any questions, feel free to
+                  reach out. I'm open to full-time opportunities and exciting
+                  freelance projects!
+                </p>
+                <ul class="actions">
+                  <li><a href="#contact" class="button">Contact Me</a></li>
+                </ul>
+              </section>
+              <section>
+                <h2>Contact Info</h2>
+                <dl class="alt">
+                  <dt>Email</dt>
+                  <dd>
+                    <a href="mailto:shivamraj7479@gmail.com"
+                      >shivamraj7479@gmail.com</a
+                    >
+                  </dd>
+                  <dt>GitHub</dt>
+                  <dd>
+                    <a href="https://github.com/Badshahshvm"
+                      >github.com/Badshahshvm</a
+                    >
+                  </dd>
+                </dl>
+                <ul class="icons">
+                
+                  <li>
+                    <a
+                      href="https://www.facebook.com/profile.php?id=100007587432616&mibextid=JRoKGi"
+                      class="icon brands fa-facebook-f"
+                      ><span class="label">Facebook</span></a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.instagram.com/badshah_shvm?igsh=bmcxM3ZpajFmYzU="
+                      class="icon brands fa-instagram"
+                      ><span class="label">Instagram</span></a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://github.com/Badshahshvm"
+                      class="icon brands fa-github"
+                      ><span class="label">GitHub</span></a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="mailto:shivamraj7479@gmail.com"
+                      class="icon solid fa-envelope"
+                      ><span class="label">Email</span></a
+                    >
+                  </li>
+                </ul>
+              </section>
+            </footer>
+          </div>
+      
+
+      <script src="assets/js/jquery.min.js"></script>
+      <script src="assets/js/jquery.scrollex.min.js"></script>
+      <script src="assets/js/jquery.scrolly.min.js"></script>
+      <script src="assets/js/browser.min.js"></script>
+      <script src="assets/js/breakpoints.min.js"></script>
+      <script src="assets/js/util.js"></script>
+      <script src="assets/js/main.js"></script>
+    </div>
+  </body>
+</html>
